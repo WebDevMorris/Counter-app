@@ -1,14 +1,21 @@
 let count = 0;
 
-document.getElementById("decreaseBtn").onclick = function(){
-     count -=1;
-     document.getElementById("counterLabel").innerHTML = count;
-}
-document.getElementById("resetBtn").onclick = function(){
+const decreaseButton = document.getElementById("decreaseBtn");
+const resetButton = document.getElementById("resetBtn");
+const increaseButton = document.getElementById("increaseBtn");
+const counterLabel = document.getElementById("counterLabel");
+
+decreaseButton.addEventListener("click", () => {
+     count--;
+     counterLabel.innerHTML = count;
+});
+
+resetButton.addEventListener("click", () => {
      count = 0;
-     document.getElementById("counterLabel").innerHTML = count;
-}
-document.getElementById("increaseBtn").onclick = function(){
-     count +=1;
-     document.getElementById("counterLabel").innerHTML = count;
-}
+     counterLabel.innerHTML = count;
+});
+
+increaseButton.addEventListener("click", () => {
+     count++;
+     counterLabel.innerHTML = count;
+});
